@@ -14,6 +14,13 @@ public class AppleTree : MonoBehaviour
 	void Start ()
 	{
 		// dropping apples every second
+		InvokeRepeating ("DropApple", 2f, secondsBetweenAppleDrops);	// call new fx DropApple; 2f tells to wait 2 sec before the first time that it calls DropApple; secondsBetweenAppleDrops tells it to then call DropApple again every secondsBwnAppleDrops seconds thereafter
+	}
+
+	void DropApple()
+	{
+		GameObject apple = Instantiate (applePrefab) as GameObject;
+		apple.transform.position = transform.position;
 	}
 
 	void Update ()

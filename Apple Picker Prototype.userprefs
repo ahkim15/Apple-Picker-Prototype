@@ -1,8 +1,11 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/AppleTree.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Basket.cs">
     <Files>
-      <File FileName="Assets/Scripts/AppleTree.cs" Line="22" Column="23" />
+      <File FileName="Assets/Scripts/AppleTree.cs" Line="19" Column="2" />
+      <File FileName="Assets/Scripts/Apple.cs" Line="13" Column="95" />
+      <File FileName="Assets/Scripts/ApplePicker.cs" Line="21" Column="3" />
+      <File FileName="Assets/Scripts/Basket.cs" Line="32" Column="3" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
