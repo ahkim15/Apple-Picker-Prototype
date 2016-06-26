@@ -12,6 +12,11 @@ public class Apple : MonoBehaviour
 		{
 			// this script refers to the current instance of the Apple class, not the entire GameObject
 			Destroy (this.gameObject);	// removes things that are passed into it from the game and can be used to destroy both components and GameObjects
+
+			// get a reference to the ApplePicker component of Main Camera
+			ApplePicker apScript = Camera.main.GetComponent<ApplePicker>();
+			// call the public AppleDestroyed() method of apScript
+			apScript.AppleDestroyed();
 		}
 	}
 }

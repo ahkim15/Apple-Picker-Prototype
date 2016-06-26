@@ -3,7 +3,8 @@ using System.Collections;
 
 public class Basket : MonoBehaviour 
 {
-
+	public GUIText scoreGT;
+	 
 	void Update () 
 	{
 		// get the current screen position of the mouse from Input
@@ -21,6 +22,16 @@ public class Basket : MonoBehaviour
 		this.transform.position = pos;
 	}
 
+	void Start ()
+	{
+		// find a reference to the ScoreCounter GameObject
+		GameObject scoreGO = GameObject.Find ("ScoreCounter");
+		// get the GUIText component of that GameObject
+		scoreGT = scoreGO.GetComponent<GUIText> ();
+		// set the starting number of points to 0
+		scoreGT.text = "0";
+	}
+
 	void OnCollisionEnter (Collision coll)
 	{
 		// find out what hit this basket
@@ -28,6 +39,19 @@ public class Basket : MonoBehaviour
 		if (collidedWith.tag == "Apple")
 		{
 			Destroy (collidedWith);
+		}
+
+		// parse the text of the scoreGT into an int
+		int score = int.Parse (scoreGT.text);
+		// add points for catching the apple
+		score += 100;
+		// convert the score back to a string and display it
+		scoreGT.text = score.ToString ();
+
+		//track the high score
+		if (score > HighScore.score)
+		{
+			HighScore.score = score;
 		}
 	}
 }
